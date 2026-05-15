@@ -1,0 +1,314 @@
+Topics:
+
+1. 3 Types of CSS:     OR
+   3 Ways To Add CSS:
+        a. Inline CSS:
+            style attribute in start tag:
+                Syntax:     
+                    <startTag style="propertyName: propertyValue;">
+
+        b. Internal CSS:
+            CSS is written inside HTML document using style tag in head section:  
+                Syntax:
+                        <head>     
+                            <style type="text/css"> 
+                                Selector {
+                                    propertyName: propertyValue;
+                                }
+                            </style>
+                        </head>
+                    where:
+                        type = specifies CSS styles and value should be "text/css"
+
+        c. External CSS:
+            CSS is written in an external ".css" file and linked it with HTML document using "link" tag (in the head section) 
+                Syntax:
+                    <head>
+                        <link rel="stylesheet" href="style.css">
+                    </head>  
+                
+                where:
+                    rel = relation of external file with html document
+                    href = address of external file
+
+                Emmet shortcut:
+                    link:css
+
+2. Highest Priority:
+        1st - inline css
+        2nd - internal css 
+        3rd - external css
+
+    "!important":
+        top Priority - use anywhere after "property value"
+
+    Example:
+
+        h1 {
+            color:red !important;
+        }
+
+3. Most Used CSS:
+    External:
+        connect single css file with multiple html pages
+        edit only 1 file and changes will apply in multiple html pages 
+        save in cache, cause file load faster for multiple pages
+        small amount of code
+        increase productivity 
+        time bachega
+
+    Internal:
+        just for 1 html page
+        for static html page
+        specific styles for a specific html page that do not need for multiple html pages
+
+    Inline
+        specific styles for a specific element of single html page
+        required few styles
+
+4. CSS Comments:
+        /*  */
+        shortcut:  
+                ctrl + /
+
+5. CSS Rules:
+        Selector
+        Declaration Block:
+                { all declarations }
+        Declaration:
+                Property Name: Property Value;  - (Key Value Pairs)
+
+    Example:
+
+        h1 {
+            color: red;
+        }
+
+    Where:
+        h1 = Selector
+        {color: red;} = Declaration Block 
+        color: red; = Only Declaration Part
+
+6. CSS Selectors:
+        a. Element Name "h1"
+            target all the same name html element
+                Syntax:     h1 {}
+
+        b. id "#"
+            must be unique for every html elment 
+            target only 1 element
+                Syntax:     #para1 {}
+
+        c. class "."
+            give same class to multiple or a group of html elements
+            target more than 1 element at a time
+                Syntax:     .header {}
+
+        d. Child Selector ">"
+            direct child or must be nested element on first level of parent element which you select
+                Syntax:     div > p {}
+
+        e. Descendant Selector:
+            element must be nested on any level of defined element 
+                Syntax:     div a {}
+
+        f. Adjacent Selector "h1 + p"
+            must be come after sibling on siblings level
+                Syntax:     div + p {}
+
+        g. General Sibling Selector "h1 ~ p" 
+            present on anywhere in the siblings level
+                Syntax:     h1 ~ p {}
+
+        g. Universal Selector "*"
+            selects all the elements of HTML document
+                Syntax:     * {}
+
+        h. pseudo selector:
+            it is like js logics and events:
+            ksi element p kuch krne se kuch ho css se 
+                Syntax:     
+                        selector: visited {}
+                        selector: link {}
+                        selector: active {}
+                        selector: hover {}
+
+                Example:
+                    a:hover {}
+                    p:first-child {}
+
+7. CSS Box Model:
+    Element Space:
+        content space/content + padding + border space 
+
+    Padding Space:
+        space inside element
+        p:0 = padding: 0  
+
+    Border Space:
+        space b/w padding & margin
+
+    Margin Space:
+        space outside border
+        m:0 = margin: 0 
+
+    Box Size = Border Box: 
+        Exclude Margin From Total Height of Element
+
+    Margin Collapsing:
+        When margin of 2 elements will collapse, only max margin will apply
+
+Important Points:
+
+Total height and width of any element = CSS box model properties (padding, border, margin).
+Background color includes padding area
+
+CSS Box-Sizing Property:
+
+box-sizing: border-box; includes:
+        total height of element = content height + padding + border - margin of that element
+
+Margin Collapse:
+
+if margin of 2 elements collapsing
+then maximum margin will apply/show only 1 time, it will not be double
+
+Question:
+    ye kab hoga jab box sizing border box laga hoga to ya phir nhi laga hoga to aesa hoga?
+
+CSS Fonts:
+    Properties of Fonts:
+        1. Font-family:
+                defines how font appears in website
+                    Generic Fonts
+                    Fallback Fonts 
+                    Import/Link Fonts From Google Fonts
+
+        2. font-size:
+                defines font size 
+                    values in "px" and "keywords"
+                    20px and large
+
+        3. font-style:
+                defines font mood:
+                    italic or bold 
+
+        4. font weight:
+                defines bold or light text
+                400 and lighter               
+
+        5. text-decoration:
+                defines lines around text
+
+        6. text-decoration-style:
+                defines different types of lines around text
+
+        7. text-decoration-color:
+                defines color for different types of lines around text
+
+        8. text-decoration-thickness:
+                defines line weight text-decoration
+
+        9. text-indent:
+                add margin from left
+        
+        10. text-overflow:
+                when space is small but text is large, 
+                to control this situation use this property  
+
+                    ellipsis    - shows ....
+                    overflow:hidden 
+
+                    clip        - shows text till border
+                    overflow:hidden 
+
+        11. text-transform:
+                tranforms the text in capital, small letters, etc 
+
+        12. text-align:
+                align the text horizontally
+
+        13. word-break:
+                breaks the word:
+                    break-all 
+
+        14. line-height:
+                space btw lines
+        
+                default line height = 110% - 120% 
+                greater/less than 1.2 to increase/decrease line height  
+
+        15. letter-spacing:
+                space btw words
+
+CSS Colors:
+    color is a css property which defines different types of colors in anywhere in website
+
+    4 Ways To Represent Colors:
+        1. Color Keyword
+            using color names like red, blue, black, green, aqua etc
+            140+ defined color names exist in css 
+            most used
+
+            Example:
+                color: red;
+
+        2. RGB:
+            red, green, blue
+            colors formed by mixture of these 3 colors 
+            different shades of color
+            most used
+            
+            Syntax:
+                    rgb(r, g, b)
+
+            Example:
+                    color: rgb(255, 255, 255)
+
+
+            RGBA:
+                alpha channel = color opacity
+                value btw 0 - 1
+
+            Syntax:
+                    rgba(r, g, b, alpha)
+
+            Example:
+                    color: rgba(0, 47, 255, 0.5)
+
+        3. HEX:
+            includes "#" symbol in starting
+            consists into "6" digits
+            "16" counting numbers included 0-9 and A-F 
+
+            Syntax:
+                    #00ff00
+
+            Example:
+                color: #ffffff
+
+        4. HSL:
+            hue, saturation, lightness
+            values in "%" 
+            
+            Syntax:
+                    hsl(h, s, l)
+
+            Example:
+                    color: hsl(0, 100%, 50%)
+
+            HSLA:
+                A = alpha = color opacity
+                value btw 0 - 9
+
+            Syntax:
+                    hsla(h, s, l, a)
+
+            Example:
+                    color: hsla(0, 100%, 50%, 0.4)
+
+    Most Used Colors Type:
+        HEX
+        RGB
+        Color Name
+

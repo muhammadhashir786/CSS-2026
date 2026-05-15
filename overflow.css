@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(246, 195, 222);
+  text-align: center;
+}
+
+h1 {
+  width: 50px;
+
+  border: 2px solid blue;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.box {
+  height: 200px;
+  width: 400px;
+
+  background-color: orange;
+  color: black;
+  margin: auto;
+}
+
+/* overflow values */
+
+h1 {
+  overflow: visible;
+  overflow: auto;
+  overflow: scroll;
+  overflow: hidden;
+
+  /* below are same */
+
+  overflow: inherit;
+  overflow: initial;
+  overflow: unset;
+}
+
+
+.box {
+    overflow: visible;
+    overflow: hidden;
+    overflow: scroll;
+    overflow: auto;
+}

@@ -1,0 +1,614 @@
+CSS Notes:
+
+● Introduce you to how CSS works
+● Teach you how to write CSS rules
+● Show you how CSS rules apply to HTML pages
+
+to style an HTML document
+describes how HTML elements should be displayed.
+It can control the layout of multiple web pages all at once
+
+
+to understand CSS, imagine that there is an invisible box around every HTML Element.
+CSS allows you to create rules that control the way that each individual box (and the contents of that box) is presented.
+
+CSS Rule:
+
+A CSS rule contains two parts: a selector and a declaration.
+
+Style the Boxes include:
+
+Width and height - style
+Borders (color, width, and style) - style
+Background color and images - style
+Position in the browser window - style
+
+Style the Text include:
+
+Typeface = font family (how fonts display)
+Size    ------
+Color = font color 
+styles = Italics, bold, ...
+tranform = uppercase, lowercase, ...
+small-caps
+
+Specific:
+
+Other specific ways to style elements such as:
+
+lists
+tables
+forms
+
+Use of Different Types of CSS:
+
+1. Inline CSS: 
+
+inline css me har element k lye bar bar css likhna parega
+when we need to write few styles in any HTML element, we can use inline css
+
+jab k internal or external css me 1 ya ziada element ko select kr k same ya different style de sakte hn
+
+2. Internal CSS:
+
+Internal CSS use style tag to write CSS in the head of HTML document
+style tag have "type" attribute that indicates the styles are specified in CSS  
+
+when we use internal css, our HTML document will grow and become very large file and we need to scroll down to see the HTML code because CSS code will show at the top of HTML document in internal CSS
+
+Internal CSS is used only for 1 html document not for multiple HTML documents
+we cannot use internal css with multiple HTML documents because we cannot link internal css, it is written at the top of HTML document inside the head section 
+
+3. External CSS:
+
+but when we use external css, 
+we have a separate html file and css file
+and we can easily see the html code from HTML document
+and we can write css in 1 css file and linked with multiple HTML documents 
+
+An HTML document can use more than one CSS style sheet using link tag
+
+Example: 
+
+some authors use one CSS file to control the presentation (such as fonts and colors) and a second to control the layout.
+
+Charateristics:
+
+Allows all pages to use the same style rules (rather than repeating them in each page) to maintain the theme and layout style.
+
+if we want to change styles, we can change it by changing in 1 css file
+Means you can change the styles used across all pages by altering just one file (rather than each individual page)
+
+The Link Tag:
+
+the <link> element is used to indicate where the CSS file is located
+the <link> tag is an empty tag, it does not have a closing tag 
+the <link> tag is placed in the head element 
+
+Attributes of Link Tag: 
+
+the <link> tag have 3 attributes:
+
+a. rel  -   defines the relation of external file that linked with html document
+            The value should be stylesheet when linking to a CSS file.
+
+b. href -   location of the file (which is often placed in a folder called css or styles)
+
+c. type -   defines the type of external file that linked with html file, 
+            The value should be text/css.
+                                
+<link rel="stylesheet" href="styles.css" />	OR 
+<link rel="stylesheet" href="./styles.css" />
+
+
+Selectors:
+
+there are selectors in CSS
+selectors are used to select HTML elements on which styles will be apply
+Selectors indicate which element the rule applies to.
+
+CSS selectors target or select HTML elements to apply styles on it
+CSS selectors are case sensitive 
+
+Declaration:
+
+"{}" are written just after the "selector" which is called "Declaration Blocks" inside that we write CSS styles which is called "Declaration"
+Declarations are split into two parts (a property and a value) and are separated by a colon ":"
+semi-colon ";" is written at the end of declaration
+we can specify several properties in one declaration, each separated by a semi-colon ";"
+
+Property:
+
+Properties indicate the aspects of the element you want to change. 
+Example:    color, font, width, height and border.
+
+Value:
+ 
+Values specify the settings you want to use for the chosen properties.
+Example:    property is color and its value is "red"
+
+Selectors in CSS:
+
+there are many selectors in CSS:
+
+a. Universal Selector           selects all HTML elements                   * {}
+
+b. Element /Type Selector       selects elements using element names        h1, p {}
+
+c. Class Selector               selects elements using class attribute      .header {}
+                                values
+                                we can give multiple classses to 1 element 
+                                by space
+
+d. Id Selector                  selects elements using id attribute         #main {}
+                                values
+                                we can not give multiple id's to 1 element
+
+e. Child Selector               select first child element of defined       div > p {}
+                                element
+
+f. Descendent Selector          select elements which is present            div a {}
+                                on any nested level of defined element
+
+g. Adjacent Sibling Selector    select element that is the next sibling     
+                                of defined element.
+        h1 + p {}               Targets the first sibling <p> element after any <h1> element
+                                (but not other <p> elements)
+
+h. General Sibling Selector     select element that is the sibling of defined element.
+        h1 ~ p {}               Targets all the sibling <p> element after any <h1> element
+
+i. Attribute Selector           [name=value] { declaration }
+
+a. Element Name Selector:
+
+we can select multiple elements using "Element Name Selector" separated by comma "," like below:
+
+Example:
+
+div, span {
+    Property: value;
+}
+
+Disadvantage of "Element Name Selector":
+
+it selects all the "same name HTML elements" from HTML document and apply styles in it
+The same rule can apply to more than one or different elements if you separate the element names with commas.
+
+but if we don't want to apply styles on all the "same name elements" and we want to apply only some specific/particular same elements then what will we do? 
+for this we use class or id selector.
+
+b. Class Selector:
+
+select a group of some specific or different types of HTML elements and apply styles in it
+class selectors have been called by "." in CSS file
+select multiple elemtents using class selector
+give multiple classes to single element
+
+c. Id Selector:
+
+select a unique and particular html elment and apply styles in it
+id selectors have been called by "#" in CSS file
+select only 1 elemtent using id selector at a time
+can not give multiple id's to single element
+
+CSS Box Model:
+
+Every element is a box in CSS
+it includes margin, padding and border
+the total height and width of the content of element will be included box model properties (padding, border, margin)
+
+padding = inside space of the content
+margin = outside space of the content
+border = space between margin and padding
+
+Total Width Include:
+
+Content Width
+left and right padding
+left and right border
+left and right margin 
+
+Total Height Include:
+
+Content height
+top and bottom padding
+top and bottom border
+top and bottom margin
+
+Points:
+
+Total height and width of any element = CSS box model properties (padding, border, margin) 
+Background color includes padding area
+
+CSS Box-Sizing Property:
+
+box-sizing: border-box; includes:
+
+it has an important value "border box"
+it changes the definition of height of any element
+CSS "Box-Sizing: border box" property includes area of border and padding along with content
+but it does not include margin area when we use "Box-Sizing: border box" Property
+
+when we use box-sizing: border box property on any element, 
+it changes the height of that element
+the total height of that element excludes margin and includes padding and border along with content of that element
+
+Margin Collapse:
+
+if margin of 2 elements collapsing
+then maximum margin will apply only 1 time, it will not be double
+
+
+
+
+
+
+
+Font/Font Style:
+
+there are many fonts styles
+font style define "how text appears"
+there are many properties of font/font style
+
+Codepen Website tells how fonts appear in the screen
+
+FallBack Fonts:
+
+there is a main font with some other fonts in css property value
+means if any font does not installed in user's computer, then the other font will apply
+2nd after 1st/3rd after 2nd and 1st, and so on
+
+Note:
+
+we need to include minimum 1 Generic font style, so that if any other fonts is not installed in user's computer then generic font will apply
+
+Generic Font:
+
+A generic font (or generic font family) is a CSS keyword that represents a broad category of font styles—such as serif, sans-serif, or monospace—used as a fallback mechanism to ensure text remains legible if specific fonts fail to load.
+
+Example:    serif, sans-serif, monospace, cursive, fantasy, etc
+
+font-family:
+    use default installed Fonts
+    import/link/download fonts from google fonts website 
+
+Q: How to import/link fonts from google fonts?
+
+font-size:
+    defines font size:
+    
+    20px 
+    50px
+    10px
+
+    small
+    medium
+    large
+    larger
+    x-large
+    xx-large
+    x-small
+    
+
+font-style:
+    defines font mood:
+
+        italic 
+        normal 
+        oblique
+        inherit
+
+font weight:
+    defines bold or light text
+
+        bold
+        bolder 
+        lighter
+        light
+        100 
+        200
+        500
+        1000 
+
+text-decoration:
+    defines line around text:
+
+        underline
+        overline 
+        double
+        wavy 
+
+text-decoration-style:
+    defines different types of lines around text
+
+        dashed 
+        dotted 
+        double 
+        solid
+        wavy
+        unset 
+
+text-decoration-color:
+    line color:
+
+        red
+        white
+        black
+        orange
+
+text-decoration-thickness:
+    line weight light or bold:
+
+        20px
+        5px
+
+text-indent:
+    add margin from left:
+    
+        10px
+        15px
+
+text-overflow:
+    border, width
+
+    ellipsis    - shows ....
+    overflow:hidden 
+
+    clip        - shows text till border
+    overflow:hidden 
+
+text-transform:
+    lowercase
+    uppercase
+    none
+    capitalize
+    inherit
+
+text-align:
+    align the text horizontally:
+        center   
+        left 
+        right
+
+word-break:
+    breaks the word:
+
+        break-all 
+
+line-height:
+    space btw lines:
+        10
+        20
+        5
+
+    default line height = 110% - 120% 
+    greater/less than 1.2 to increase/decrease line height  
+
+letter-spacing:
+    space btw words:
+
+    10
+    5 
+
+Colors In CSS:
+
+there are many defined colors in css
+
+colors can be represented by 3 ways:
+
+a. color keyword
+b. rgb
+    rgba
+c. hex
+d. hsl
+    hsla
+
+1 color have 4 above ways to represent  
+
+a. Color Keyword:
+    where we define colors with their names
+        red
+        blue
+        green
+        gold
+        orange
+        pink
+        yellow
+        white
+        black
+
+Example: 
+
+selector {
+    color: red;
+}
+
+b. RGB:
+    stands for red, green and blue
+    limit of value from "0 - 255" 
+    0-255 defines the different shades of color that does not exist in "color keyword"
+    different colors and shades of colors formed by mixture of the above values of "rgb" 
+
+syntax:     color: rgb(red, green, blue)
+
+selector {
+    color: rgb(255, 255, 255)
+}
+
+RGBA:
+    RGB = red, green, blue
+    A = alpha channel = color opacity
+    defines the opacity/transparency of color
+    values btw "0 - 1"
+
+    we can change the "color" by clicking on the "color icon"
+
+syntax:     color: rgb(red, green, blue, alpha)
+
+selector {
+    color: rgba(0, 47, 255, 0.5)
+}
+
+
+c. Hex:
+    it is a way to represent the code
+    includes "6 digits and" total "16 counting numbers" from 0-9 and A-F
+    we can change the "color" by clicking on the "color icon"
+
+Syntax:      #000000
+
+selector {
+    color: #34ff35
+}
+
+d. HSL:
+    stands for hue, saturation, lightness
+    values in %
+    "h" is not in "%"
+
+Syntax:      hsl(h, s%, l%)
+
+selector {
+    color: hsl(0, 100%, 50%)
+}
+
+HSLA: 
+    (hue, saturation, lightness, alpha)
+    A = color opacity
+    value = 0-1
+
+Syntax:      hsla(h, s%, l%, alpha)
+
+selector {
+    color: hsla(0, 100%, 50%, 0.4)
+}
+
+Note:
+
+color keywords and hex color codes are most used in css
+it is used in everywhere where color is needed
+
+    Most Used Colors Type:
+        HEX
+        RGB
+        Color Name
+
+Cascade:
+
+Cascade algorithm is used to resolve any conflicts in CSS
+what if defines 2 or more styles for same HTML element, what will be apply?
+it decides that which property will apply and which will not apply
+here comes cascade rules like precedence, specificity, Priority
+
+4 Rules of Cascade:
+
+1. position and order of appearance 
+2. specificity
+3. origin - when developer did not define css - browser agent stylesheet, where css comes from  
+4. !importance
+
+1. Position:
+
+if multiple styles define using same selector, the last style will apply
+
+2. Specificity:
+
+defines "Priority no" which elment is most specific and highest Priority
+
+if multiple styles define using different selectors, then specificity rule comes where max score counts of selector:
+the element which have max score, its style will apply
+
+Selectors                                       Scores
+
+Universal selector                              0
+Element selector & pseudo element               1            
+class, attribute selector & pseudo classes      10
+id selector                                     100
+inline css using style attribute                1000 
+!important flag                                 10000
+
+class specificity = 10
+element + class selector = 1 + 10 = 11 
+element + class + attribute selector = 1 + 10 + 10 = 21 
+element + class + id selector = 1 + 10 + 100 = 111 
+
+Note:
+    try to use minimum specific selectors, so that we can over-write it easily 
+
+3. origin:
+
+browser agent stylesheet 
+where css comes from,
+if user did not define css 
+
+
+Inheritence:
+
+Every CSS Property have its "Value"
+we define "value" of css "property" for all the html elements
+what happens if no value is provided for any property of an element
+the value is either "inherited" from the parent element or set to its "initial" value bydefault in css
+
+Types of Properties:
+
+there are 2 types of properties in css:
+
+1. inherited property 
+2. non-inherited property 
+
+1. Inherited Property:
+
+inherited properties take the "values" from their parent element bydefault, if no value is provided
+
+Examples:
+    color, font-family, font-size, line-height, and text-align, etc
+
+CSS Code:
+
+p {
+  color: blue;
+  font-size: 20px;
+}
+
+HTML Code:
+
+<p>This is a paragraph with some <strong>important</strong> text.</p>
+
+2. Non-inherited Property:
+
+Non-inherited properties do not take the "values" from their parent element bydefault
+if it is needed, we define manually by using "inherit" keyword in "value"  
+
+Examples:
+    border, background, margin, padding, width, and height
+
+Inherit Keyword:
+
+"inherit" keyword gives values to those css properties that value does not defined  
+by using this keyword, we can manually set "inherited value" for any element
+it works in both inherit or non-inherited properties 
+
+
+
+
+
+
+
+
+
+MS Office Course
+Word, Powerpoint, Excel
+duration 2 months 
+2 classes per week
+1 hour 
+
+Web Development Course
+HTML, CSS, Javascript 
+duration 2 months 
+2-3 classes per week
+1-1.5 Hours 
+TTS (Tuesday, Thursday, Saturday)
+individually home tution available
+limited seats
+Instructor: Muhammad Hashir

@@ -1,0 +1,2 @@
+to copy path of HTML document:
+shift + alt + c 

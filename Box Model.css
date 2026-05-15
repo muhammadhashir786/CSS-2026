@@ -1,0 +1,21 @@
+.main {
+  background-color: rgb(255, 188, 255);
+}
+
+.box1,
+.box2 {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  color: white
+}
+
+.box1 {
+  margin: 30px;
+  background-color: red;
+}
+
+.box2 {
+  padding: 30px;
+  background-color: rgb(25, 0, 255);
+}

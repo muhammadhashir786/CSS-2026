@@ -1,0 +1,15 @@
+body {
+    color: red;
+}
+
+.c1 a {
+  color: inherit;
+}
+
+.c2 a {
+    color: initial;
+}
+
+.c3 a {
+    color: unset;
+}

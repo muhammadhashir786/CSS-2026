@@ -1,0 +1,466 @@
+CSS Topics:
+
+CSS:
+    stands for Cascading Style Sheet 
+
+    3 Types of CSS  OR
+    3 Ways To Add/Import CSS:
+        1. Inline CSS:
+            style attribute in html element
+
+        2. Internal CSS: 
+            style tag in head of html document
+            selectors 
+
+        3. External CSS:        
+            link ".css" file in head of html document using link tag
+                <link rel="stylesheet" href="fileAddress">
+
+            Emmet shortcut to link css file:
+                link:css
+
+CSS Comments:
+    /* */
+    ctrl + /
+
+CSS Rules:
+    1. Selector
+    2. Declaration Block:
+            { declarations }
+    3. Declaration:
+            property: value;
+
+            2 Types of Values:
+                1. Defined
+                2. Pre-defined
+
+CSS Selectors:
+    1. element/type - also select multiple elements separated by "," to give same styles
+    2. class "."
+    3. id "#"
+    4. universal "*"
+    5. child ">"
+    6. descendant
+    7. adjacent sibling "+"    - select next sibling of your defined element
+    8. general sibling "~"
+    9. pseudo class selectors  - style different states of element (:hover :visited :link :active)
+    10. pseudo element selectors    - select any part of an element
+    11. attribute [name=value]    
+
+    Syntax:
+        1. h1, p, s {property: value;}
+        2. .header {property: value;}
+        3. #main {property: value;}
+        4. * {property: value;}
+        5. p > a {property: value;}
+        6. p a {property: value;}
+        7. h2 + p {property: value;}
+        8. h2 ~ p {property: value;}
+        9. selector: pseudo-class {property: value;}
+        10. p::first-line{property: value;}
+        11. a[href="url"] {property: value;}
+
+    Examples:
+
+    Element & Class:
+        element.className, element.className {property: value;}
+        
+    Descendant: 
+        body h1+p .special {property: value;}
+
+    Attribute:
+        li[class] {}
+        li[class="a"] {}
+        li[class~="a"] {}
+
+CSS Units:
+    units are used to define size of html elements according to our need
+
+    2 Types of Units:
+        1. Absolute Units   - fixed & not dependent
+        2. Relative Units   - changes & dependent    
+
+    1. Absolute Units:
+            px      - pixels        (1/96 of an inch) - most used    
+            mm      - millimeters 
+            in      - inches        (96px & 2.54cm)
+            cm      - centi-meter   (96px/2.54)
+            pt      - points        (1/72 of an inch)  
+            pc      - picas         (12 pt)
+
+    2. Relative Units:
+            %       - percent (dependent on parent)
+            em      - multiply with parent element property
+            rem     - multiply with root parent element property means <html> tag
+            vw      - viewport width (device width)
+            vh      - viewport height (device height)
+            vmin    - minimum viewport (large screen height & small screen width)
+            vmax    - maximum viewport (large screen width & small screen height)
+
+Note: 
+    minimum view-port   - mobile width & computer height
+    maximum view-port   - computer width & mobile height
+
+vw:
+    set width acc to viewport width (your device sreen width) - screen width changes but element width remains same 
+
+vh:
+    set height acc to screen height (your device sreen height) - screen height changes but element height remains same
+
+em:
+    parent se em ko multiply krva do
+    agr parent ka font size define kia gya hai ya dafault font size ho to child element ka font size ki unit "em" parent k font size se multiply hojaiega
+
+rem:
+    root element se "em" ko multiply krva do
+
+Most Used CSS:
+    1. External - style multiple html pages using 1 single css file - design layout/theme  
+    2. Internal - style within a single html page
+    3. Inline - style within few html element
+
+Highest Priority:
+    1. Inline
+    2. Internal | External - depends on where link placed before or after internal CSS 
+
+        Note: 
+            if link is placed before internal css then internal css have highest priority  
+            if link is placed after internal css then external css have highest priority  
+
+    3. !important
+        top Priority - use anywhere before semi-colon ";" in declaration
+
+Cascade Rule:
+    1. Position:
+            Same Selector:
+                Last Style Priority
+        
+            Different Selector:
+                Check Specificity of Element
+    
+    2. Element Specificity:
+            Every selector have specificity values (scores) jis k hisaab se CSS rule decide kia jata hai which is called "Element Specificity"
+
+            hover on selector to show element specificity
+
+                1. Universal Selector = 0 
+                2. Element selector & pseudo element = 1
+                3. class, attribute selector & pseudo classes = 10 
+                4. Id Selector = 100
+                5. inline css (style attribute) = 1000
+                6. !important = 10000
+
+    3. Origin:
+            Browser Agent Stylesheet:
+                when developer do not define css
+
+CSS Inheritence:
+    some properties of html elements takes "values" from their parent element in CSS, this is called "Inheritence"
+
+    2 Types of CSS Properties:
+        1. Inherited Properties Bydefault:
+                write values
+
+        2. Non-inherited Properties Bydefault:
+                write values
+
+    Inheritence Values:
+        1. inherit  - it is a keyword to set inherited values that takes from their parents
+        2. initial  - defines bydefault value of css property 
+        3. unset    -          
+
+CSS Box Model:
+    1. Element Space:
+        content space/content + padding + border space 
+        margin space not included
+
+    2. Padding Space:
+        space inside element
+        space btw content and border 
+        p:0 = padding: 0 - Emmet
+
+    3. Border Space:
+        space b/w padding & margin
+
+    4. Margin Space:
+        space outside border
+        m:0 = margin: 0 - Emmet
+
+    Box Model Properties:
+        1. Box Size = Border Box: 
+            Exclude margin space from total Height/Width space of an Element     -----------
+            set horizontal bar problem in webpage  
+            Without "border box" total height/width space includes:
+                content + padding + border + margin 
+
+    Margin Collapsing:
+        When margin of 2 elements will collapse, only max margin will apply
+
+Question:
+    ye kab hoga jab box sizing border box laga hoga to ya phir nhi laga hoga to aesa hoga?
+
+CSS Colors:
+    Color Properties:
+        1. color            - for text 
+        2. background-color - for background
+        3. border-color     - for border
+ 
+    4 Ways To Represent Color Values:
+        one color have all the values below:
+
+            1. Color Name/Keyword:
+                    red, yellow, black, white, blue, etc
+                    approx 140 color names - depend on browser support
+
+            2. RGB:
+                rgb(red, green, blue)
+                intensity btw "0-255"
+                    rgb(255, 0, 0)
+
+                RGBA:
+                    rgba(red, green, blue, alpha)
+                        A = alpha = color opacity
+                        values btw "0-1"
+                            rgba(255, 0, 0, 0.5);
+
+            3. HEX:
+                #ff0000 (Hexadecimal)
+                    "#" symbol in start
+                    6 digits 
+                    16 counting numbers from "0-9" and "a-f"
+
+            4. HSL:
+                hsl(hue, saturation, lightness)        
+                values in "%"       ----------
+
+                HSLA:
+                    hsla(hue, saturation, lightness, alpha)        
+                        A = alpha = color opacity
+                        values btw 0-1
+
+    Most Used Color Value:      -------------------
+        HEX
+        RGB
+        Color Name
+        HSL
+
+CSS Background properties:
+    1. Background Color
+            background-color: colorValue;
+
+    2. Background Image:
+            background-image: url("");
+
+    3. Background Repeat:
+            background-repeat: repeat|repeat-x|repeat-y|no-repeat|initial|inherit|space|round;
+
+            "repeat" is default
+
+    4. Background Position:
+            background-position: value; 
+
+            Values:
+                if specify one value other will be "center"
+                    left top
+                    left center
+                    left bottom
+                    right top
+                    right center
+                    right bottom
+                    center top
+                    center center
+                    center bottom
+
+                    x y         - if specify one value other will be 50%
+                    x% y%       - if specify one value other will be 50%
+                    initial
+                    inherit
+
+                "0%" is default
+
+    5. Background Size:
+            background-size: auto|length|cover|contain|initial|inherit;
+
+            Note:
+                value "length" is height and width - if one specify other will set to "auto"
+                auto is default
+
+    6. Background Attachment:
+            background-attachment: scroll|fixed|local|initial|inherit;
+
+            "scroll" is default
+
+CSS Fonts:
+    how text appears in the website
+
+    5 Styles of Fonts:
+        a. Serif
+        b. Sans-serif
+        c. Monospace
+        d. Cursive
+        e. Fantasy
+
+    2 Types of Font:
+        1. Generic Fonts:
+            installed in user's system
+
+        2. Fallback Fonts
+            not installed in user's system
+
+    CSS Font Properties:
+        1. font-family:
+                how text appears
+
+        2. font-size:
+                20px and large
+
+        3. font style:
+                italic or bold 
+
+        4. font-weight:
+                values btw "100-900"
+                400 and lighter
+                normal 400, bold 700 
+
+        Values defined later
+
+Question: 
+    How to import/link/download fonts from google fonts?
+
+    CSS Text Properties:
+        1. text-align:
+                align text horizontally     
+                    values: left, right, center, justify
+
+        2. text-transform:
+                style text case
+                    values: capitalize, uppercase, lowercase, none, full-width 
+
+        3. text-decoration:
+                used for underline
+                    values: underline, overline, line-through, double
+
+                text-decoration style:
+                    style the underline
+
+                text-decoration color
+                text-decoration thickness
+                    value in "px"
+
+        4. text-indent:
+                create space in start of text   OR   add left Margin
+
+        5. line-height
+        6. word-spacing:
+        7. letter-spacing:
+                space btw words
+
+        8. word-break:
+                breaks the word
+
+        9. text-shadow:
+            Syntax:
+                x y blurr color
+
+        10. text-overflow:
+                when content is greater than box size (height/width), then it overflows
+
+                values: 
+                    visible
+                    hidden
+                    scroll
+                    auto
+
+                        ellipsis - shows ...
+                        clip - shows text till border end
+                        
+                        use with:
+                            overflow:hidden     
+
+        11. object-fit:
+                1. contain
+                2. cover
+                3. fill     
+
+Shorthand Property:
+    write multiple values in 1 property
+        1. background
+        2. border
+        3. font
+        4. margin/padding
+            etc.
+
+    Examples: 
+        Background:
+            background-color: value;
+            background-image: url("");
+            background-repeat: value;
+            background-position: value;
+
+            background: color url("") repeat position;
+
+        Font:
+            font-style: value;
+            font-weight: value;
+            font-size: value;
+            line-height: value;
+            font-family: value;
+
+            font: style weight size height family;
+
+        Border: 
+            border-width: value; 
+            border-style: value; 
+            border-color: value; 
+
+            border: width style color
+
+        Margin/Padding:
+            margin-top: value;
+            margin-right: value;
+            margin-bottom: value;
+            margin-left: value;
+
+            margin: top right bottom left;
+            
+List Style Properties:
+    1. list-style-type:         circle | disc | square | none | roman, etc
+    2. list-style-position:     inside | outside
+    3. list-style-image:        url("") 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSS Position Property:
+    to control the placements of elements within a webpage
+
+    2 Properties:
+        1. position
+                static      - default
+                relative    - acc to its normal position
+                absolute    - acc to browser/window/html document
+                fixed       - acc to the viewport
+                sticky      - btw relative and fixed depends on scroll
+                clip 
+                
+        2. top/bottom/left/right
+                give values in units
+        
+
+
+CSS Display Property:
+
+
+Properties:
+    float
+    overflow-hidden
+    cursor: pointer | zoom | etc
