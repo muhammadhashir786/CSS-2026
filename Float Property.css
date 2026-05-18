@@ -1,0 +1,27 @@
+body {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.img {
+  height: 150px;
+  width: 150px;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 1em;
+  /* padding: 16px; */
+
+  float: left;
+  float: ;
+  margin: 15px;
+}
+
+.clear {
+  clear: left;
+}
+
+h2 {
+  background-color: lightseagreen;
+  color: white;
+  padding: 15px;
+}

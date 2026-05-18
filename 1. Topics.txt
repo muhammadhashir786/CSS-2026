@@ -491,6 +491,54 @@ CSS Debugging:
         1. source code  - syntax mistake will show
         2. inspect element  - syntax mistake will not show, it auto-corrects
 
+CSS Responsiveness:
+    it is a technique to layout our website according to different types of screen sizes, width and resolution
+
+    we can do this using:
+
+        1. Media queries                    
+        2. Flex-box
+        3. Grid  
+
+        1. Syntax:
+                @media media-type and (media feature rule) { write css using selector}
+
+        1. Example:
+                @media screen and (max-width: 600px) {
+                    body {
+                        color: red;
+                    }
+                }                
+
+CSS Position:
+    HTML elements display in an order
+
+    Basic Docment Flow:
+        how our browser display html elements bydefault (this is happen if we do not define scs or order for html element)
+
+        in which order html elements display bydefault, called Basic Document Flow
+
+    Note:
+        we write css to change the normal flow/layout of html elements
+        we can do this using CSS properties:
+
+        1. Float       
+        2. Position  
+        3. Flex
+        4. Grid
+
+        if we use these properties, html elements will come outside from the normal document flow
+
+    1. CSS Float Property:
+            values:
+                right | left | none | inline-end/start | inherit/initial
+
+    2. CSS Position Property:
+            values: 
+                
+
+
+
 
 
 

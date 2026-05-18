@@ -1,0 +1,52 @@
+/* 
+@media screen and (max-width: 600px) {
+  body {
+    color: red;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    color: blue;
+  }
+}
+ */
+
+/* Combine media queries */
+
+/* and */
+
+/* @media screen and (max-width: 600px) and (orientation: landscape) {
+  body {
+    color: purple;
+  }
+} */
+
+/* or */
+
+/* 
+@media screen and (max-width: 600px), 
+screen and (orientation: landscape) {
+    body {
+        color: orange;
+    }
+} 
+*/
+
+/* not */
+
+/* @media not all and (max-width: 600px) {
+  body {
+    color: green;
+  }
+} */
+
+@media not all and (orientation: landscape) {
+  body {
+    color: green;
+  }
+}
+
+
+
+
