@@ -1,5 +1,9 @@
-.main {
+.main1,
+.main2,
+.main3 {
   background-color: rgb(255, 188, 255);
+  text-align: center;
+  font-weight: bold;
 }
 
 .box1,
@@ -7,7 +11,9 @@
   height: 100px;
   width: 100px;
   padding: 10px;
-  color: white
+  color: white;
+
+  text-align: center;
 }
 
 .box1 {
@@ -18,4 +24,25 @@
 .box2 {
   padding: 30px;
   background-color: rgb(25, 0, 255);
+}
+
+.box3,
+.box4 {
+  height: 100px;
+  width: 200px;
+  padding: 20px;
+  border: 6px solid black;
+
+  color: black;
+  background-color: greenyellow;
+  text-align: center;
+  margin: auto;
+}
+
+.box3 {
+  box-sizing: content-box;
+}
+
+.box4 {
+  box-sizing: border-box;
 }

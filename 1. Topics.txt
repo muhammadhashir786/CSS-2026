@@ -62,16 +62,16 @@ CSS Selectors:
 
     Examples:
 
-    Element & Class:
-        element.className, element.className {property: value;}
-        
-    Descendant: 
-        body h1+p .special {property: value;}
+        Element & Class:
+            element.className, element.className {property: value;}
+            
+        Descendant: 
+            body h1+p .special {property: value;}
 
-    Attribute:
-        li[class] {}
-        li[class="a"] {}
-        li[class~="a"] {}
+        Attribute:
+            li[class] {}
+            li[class="a"] {}
+            li[class~="a"] {}
 
 CSS Units:
     units are used to define size of html elements according to our need
@@ -101,18 +101,18 @@ Note:
     minimum view-port   - mobile width & computer height
     maximum view-port   - computer width & mobile height
 
-vw:
-    set width acc to viewport width (your device sreen width) - screen width changes but element width remains same 
+    vw:
+        set width acc to viewport width (your device sreen width) - screen width changes but element width remains same 
 
-vh:
-    set height acc to screen height (your device sreen height) - screen height changes but element height remains same
+    vh:
+        set height acc to screen height (your device sreen height) - screen height changes but element height remains same
 
-em:
-    parent se em ko multiply krva do
-    agr parent ka font size define kia gya hai ya dafault font size ho to child element ka font size ki unit "em" parent k font size se multiply hojaiega
+    em:
+        parent se em ko multiply krva do
+        agr parent ka font size define kia gya hai ya dafault font size ho to child element ka font size ki unit "em" parent k font size se multiply hojaiega
 
-rem:
-    root element se "em" ko multiply krva do
+    rem:
+        root element se "em" ko multiply krva do
 
 Most Used CSS:
     1. External - style multiple html pages using 1 single css file - design layout/theme  
@@ -121,27 +121,28 @@ Most Used CSS:
 
 Highest Priority:
     1. Inline
-    2. Internal | External - depends on where link placed before or after internal CSS 
+    2. Internal | External - depends on where link is placed of external CSS before or after the style tag 
 
         Note: 
-            if link is placed before internal css then internal css have highest priority  
-            if link is placed after internal css then external css have highest priority  
+            if link is placed before internal css (style tag) then internal css have highest priority  
+            if link is placed after internal css (style tag) then external css have highest priority  
 
     3. !important
         top Priority - use anywhere before semi-colon ";" in declaration
 
 Cascade Rule:
     1. Position:
-            Same Selector:
-                Last Style Priority
+            a. Same Selector:
+                    Last Style Priority
         
-            Different Selector:
-                Check Specificity of Element
+            b. Different Selector:
+                    Check Specificity of Element
     
     2. Element Specificity:
-            Every selector have specificity values (scores) jis k hisaab se CSS rule decide kia jata hai which is called "Element Specificity"
+            Every selector have specificity values (scores) jis k hisaab se CSS rule apply hota hai which is called "Element Specificity"
 
-            hover on selector to show element specificity
+            Note:
+                hover on selector to show element specificity
 
                 1. Universal Selector = 0 
                 2. Element selector & pseudo element = 1
@@ -150,48 +151,70 @@ Cascade Rule:
                 5. inline css (style attribute) = 1000
                 6. !important = 10000
 
+            Question: what is the difference between pseudo elements and pseudo classes?
+
     3. Origin:
             Browser Agent Stylesheet:
-                when developer do not define css
+                when developer do not define css, then browser defines default value of properties
 
 CSS Inheritence:
     some properties of html elements takes "values" from their parent element in CSS, this is called "Inheritence"
 
     2 Types of CSS Properties:
         1. Inherited Properties Bydefault:
-                write values
+                write property names
 
         2. Non-inherited Properties Bydefault:
-                write values
+                write property names
 
     Inheritence Values:
         1. inherit  - it is a keyword to set inherited values that takes from their parents
         2. initial  - defines bydefault value of css property 
-        3. unset    -          
+        3. unset    - if inherit "yes" in this property then it will inherit otherwise not         
 
 CSS Box Model:
     1. Element Space:
         content space/content + padding + border space 
         margin space not included
+        Show in blue color
 
     2. Padding Space:
         space inside element
         space btw content and border 
         p:0 = padding: 0 - Emmet
+        Show in green color
 
     3. Border Space:
         space b/w padding & margin
+        Show in yellow color
 
     4. Margin Space:
         space outside border
         m:0 = margin: 0 - Emmet
+        Show in orange color
 
-    Box Model Properties:
-        1. Box Size = Border Box: 
-            Exclude margin space from total Height/Width space of an Element     -----------
-            set horizontal bar problem in webpage  
-            Without "border box" total height/width space includes:
-                content + padding + border + margin 
+    CSS Box Model Properties:
+        box-sizing:
+            Values:
+                1. border-box  
+                2. content-box  
+
+            1. Border Box: 
+                    a. add padding and border inside the boundry of content space,
+                        means total height and width does not increase after adding padding and border 
+                    b. it sets horizontal bar problem in webpage  
+                    c. Exclude margin space from total Height/Width space of an Element -----------
+
+            2. Content Box:
+                    a. add padding and border outside the boundry of content space,
+                        means total height and width increases after adding padding and border 
+                    b. Exclude margin space from total Height/Width space of an Element -----------
+
+                Without "border box" total height/width space includes:
+                    content + padding + border + margin 
+
+                Note:
+                    margin dono m border k bahir se add hoga
 
     Margin Collapsing:
         When margin of 2 elements will collapse, only max margin will apply
@@ -438,13 +461,15 @@ List Style Properties:
 
 
 
-
+CSS Clip Path Property:
+        changes the shape of image using properties
+            website - clip path generator (where different shapes available - select anyone - copy the property - paste into css file)
 
 CSS Position Property:
     to control the placements of elements within a webpage
 
     2 Properties:
-        1. position
+        1. position:
                 static      - default
                 relative    - acc to its normal position
                 absolute    - acc to browser/window/html document
@@ -452,9 +477,27 @@ CSS Position Property:
                 sticky      - btw relative and fixed depends on scroll
                 clip 
                 
-        2. top/bottom/left/right
+        2. top/bottom/left/right:
                 give values in units
         
+CSS Debugging:
+    it is a technique to use when our code does not give expected output
+
+    CSS Bug:
+        if we use any property in CSS but it does not give expected output, this is called "Bug"
+        and the process to fix this bug is called "Debugging" 
+
+    we can do debugging using tools that are built-in browsers:
+        1. source code  - syntax mistake will show
+        2. inspect element  - syntax mistake will not show, it auto-corrects
+
+
+
+
+
+
+
+
 
 
 CSS Display Property:
@@ -464,3 +507,5 @@ Properties:
     float
     overflow-hidden
     cursor: pointer | zoom | etc
+    position 
+    z-index
